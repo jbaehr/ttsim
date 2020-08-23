@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TTSim</title>
+</head>
+<body>
+
+<!-- 
+  Note: we cannot use an IMG-tag as
+  - there we cannot interact with the content via JS
+  - becasue of security reasons, images linked from the svg aren't loaded
+  Thus, we embed the content, thanks to HTML5.
+-->
+{svg}
+
+</body>
+</html>
