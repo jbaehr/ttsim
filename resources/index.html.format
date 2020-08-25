@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>TTSim</title>
+<script src="ttsim.js"></script>
 </head>
 <body>
 
@@ -12,6 +13,11 @@
   Thus, we embed the content, thanks to HTML5.
 -->
 {svg}
+
+<script>
+var svg = document.getElementsByTagName("svg")[0]
+svg.addEventListener("click", svg_click);
+</script>
 
 </body>
 </html>
