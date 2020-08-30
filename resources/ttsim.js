@@ -69,5 +69,28 @@ function handle_clicked_oids(oids) {
   }
   else {
     alert("Clicked OID: " + oids[0]);
+    send_play(oids[0]);
   }
+}
+
+function send_play(oid) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      handle_play_response(this.responseText);
+    }
+    else if (this.readyState == 4 && this.status >= 500 && this.status < 600) {
+      alert("Something went wrong:\n" + this.responseText)
+    }
+  };
+  xhttp.open("POST", "play", true);
+  xhttp.setRequestHeader("Content-type", "text/plain");
+  xhttp.setRequestHeader("Accept", "text/plain");
+  var body = oid + "\n";
+  //xhttp.setRequestHeader("Content-Length", body.Length);
+  xhttp.send(body);
+}
+
+function handle_play_response(responseText) {
+  alert(responseText);
 }
